@@ -1,0 +1,277 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #fffaff;
+  color: #303036;
+  font-size: 2.2rem;
+  line-height: 2.2rem;
+  font-family: "Dosis", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Muli", sans-serif;
+  font-weight: 100;
+}
+
+main {
+}
+
+.container {
+  margin: 0 auto;
+  width: 120rem;
+}
+
+.bio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+
+  padding: 1.5rem 20rem;
+  background-color: #ed4d6e;
+  color: #fffaff;
+  z-index: 100;
+  border-bottom: 5px solid #303036;
+}
+
+.bio__heading {
+  text-align: center;
+  background-color: #fffaff;
+  color: #303036;
+  padding: 2rem;
+  box-shadow: 0 2px 8px #303036;
+  border-radius: 4px;
+}
+
+.bio__image {
+  width: 200px;
+  border: 5px solid #fffaff;
+  border-radius: 50%;
+  transition: transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.bio__image:hover {
+  transform: rotate(-4deg);
+}
+
+.bio__list {
+  list-style: none;
+  padding: 1rem;
+  margin: 10px 0 0 0;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 3rem;
+  background: linear-gradient(110deg, #d33e43, #303036);
+  border-radius: 4px;
+}
+
+.bio__link {
+  transition: opacity 0.2s ease-in;
+  color: #fffaff;
+}
+
+.bio__link:hover {
+  opacity: 0.8;
+}
+
+.projects {
+  margin: 12rem 0;
+  background: #fffaff;
+}
+
+.projects__title {
+  margin: 7rem 0;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  box-shadow: 0 2px 5px #465775;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 0;
+  background: #465775;
+  border-bottom-right-radius: 50%;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover.card::before {
+  height: 100%;
+  border-bottom-right-radius: 0%;
+}
+
+.card__header--purple {
+  background-image: linear-gradient(
+    135deg,
+    #bb26e0 0%,
+    #465775 70%,
+    #c9c4c9 85%
+  );
+  color: #fffaff;
+}
+
+.card__header--red {
+  background-image: linear-gradient(
+    135deg,
+    #d33e43 0%,
+    #465775 70%,
+    #c9c4c9 85%
+  );
+  color: #fffaff;
+}
+
+.card__header--green {
+  background-image: linear-gradient(
+    135deg,
+    #00fdc6 0%,
+    #465775 70%,
+    #c9c4c9 85%
+  );
+  color: #fffaff;
+}
+
+.card__link {
+  color: #465775;
+  font-size: 3rem;
+}
+
+i {
+  transition: opacity 0.2s;
+}
+
+i:hover {
+  opacity: 0.7;
+}
+
+.card__tech {
+  display: flex;
+  justify-content: space-evenly;
+
+  box-shadow: 0 2px 5px #465775;
+  position: absolute;
+  color: white;
+  bottom: 0;
+  left: 0;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  width: 100%;
+  height: 20%;
+  background: #465775;
+  transition: transform 0.2s 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateY(0);
+  z-index: -1;
+}
+
+.card__tech i {
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+
+.card:hover .card__tech {
+  transform: translateY(100%);
+  transition-delay: 0.2s;
+}
+
+.card:not(:last-child) {
+  margin-right: 60px;
+}
+
+.card__title {
+  text-align: center;
+  padding: 2rem 0;
+  margin: 0;
+}
+
+.card__body {
+  padding: 0 4rem 4rem 4rem;
+}
+
+.card__description {
+  line-height: 3rem;
+}
+
+.card__links {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem 0;
+}
+
+footer {
+  background: #465775;
+  color: #fffaff;
+  text-align: center;
+  padding: 4rem;
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translate();
+  }
+}
+
+@media (max-width: 1300px) {
+  /* For a screen < 960px, this CSS will be read */
+  .container {
+    width: 900px;
+  }
+
+  .card:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .container {
+    width: 700px;
+  }
+
+  .cards {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 45%;
+  }
+}
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container {
+    width: 500px;
+  }
+}
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .bio,
+  .cards {
+    flex-direction: column;
+  }
+
+  .cards {
+    flex-wrap: nowrap;
+    margin: 0 auto;
+  }
+
+  .card {
+    width: 70%;
+  }
+}
